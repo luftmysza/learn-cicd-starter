@@ -30,7 +30,7 @@ func respondWithJSON(w http.ResponseWriter, code int, payload interface{}) {
 		return
 	}
 	w.WriteHeader(code)
-	
+
 	if _, err := w.Write(dat); err != nil {
 		// Most common: client closed connection early.
 		log.Printf("error writing response body: %v", err)
