@@ -20,7 +20,9 @@ jobs:
 
       - name: Run Go Test and Print Coverage
         run: go test -cover ./...
-
+  
+  linting:
+    name: 
   style:
     name: Style
     runs-on: ubuntu-latest
@@ -36,3 +38,10 @@ jobs:
 
       - name: Check Go Format - fail if not formatted
         run: test -z $(go fmt ./...)
+        
+      - name: Install staticcheck
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest
+
+      - name: Run staticcheck
+        run: staticcheck ./...
+      
