@@ -21,5 +21,9 @@ jobs:
       - name: Run Go Test and Print Coverage
         run: go test -cover ./...
 
+  style:
+    name: Style
+    
+    steps:
       - name: Check Go Format - fail if not formatted
         run: test -z $(go fmt ./...)
