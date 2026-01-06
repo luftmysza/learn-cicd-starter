@@ -1,9 +1,9 @@
 package auth
 
 import (
+	"errors"
 	"net/http"
 	"testing"
-	"errors"
 )
 
 func TestGetAPIKey_Success(t *testing.T) {
@@ -42,4 +42,3 @@ func TestGetAPIKey_MalformedHeader(t *testing.T) {
 		t.Fatalf("expected error for malformed header, got nil (key=%q)", key)
 	}
 }
-
