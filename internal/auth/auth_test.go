@@ -7,7 +7,6 @@ import (
 )
 
 func TestGetAPIKey_Success(t *testing.T) {
-	t.Fatalf("alles kaputt");
 	headers := http.Header{}
 	headers.Set("Authorization", "ApiKey super-secret-key")
 
